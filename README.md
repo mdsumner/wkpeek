@@ -1,24 +1,13 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 
 # wkpeek
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of wkpeek is to ...
+The goal of wkpeek is to …
 
 ## Installation
 
@@ -32,7 +21,7 @@ You can install the development version of wkpeek like so:
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+``` r
 library(wkpeek)
 
 sql <- "SELECT geometry FROM \"ns-water_water-poly_geo\" WHERE NAME_1 = 'Mud Lake'"
@@ -41,4 +30,9 @@ layerinfo <- vapour::vapour_layer_info(url)
 geom <- wk::wkb(vapour::vapour_read_geometry(url, sql = sql), crs = layerinfo$projection$Wkt)
 
 wk_peek(geom[32:35], border = c("hotpink", "green", "firebrick", "white"), lwd = 3)
+#> Using zoom level 14
+#> Tile grid: 4 x 5 = 20 tiles
+#> Fetching 20 tiles ...
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />

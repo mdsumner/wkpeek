@@ -15,3 +15,5 @@ Imports:
     wk
 Suggests: 
     PROJ
+URL: https://github.com/mdsumner/wkpeek
+BugReports: https://github.com/mdsumner/wkpeek/issues

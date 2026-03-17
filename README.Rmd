@@ -18,19 +18,22 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of wkpeek is to ...
+The goal of wkpeek is to get imagery from a tile server using generic methods, with input
+from a {wk} object driving the spatial query, and a background image canvas from {magick}
+on which we can plot the object. 
 
 ## Installation
 
 You can install the development version of wkpeek like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+##remotes::install_github("mdsumner/wkpeek")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use a wk subset object to get a background
+image as a {magick} canvas. 
 
 ```{r example}
 library(wkpeek)
@@ -42,3 +45,11 @@ geom <- wk::wkb(vapour::vapour_read_geometry(url, sql = sql), crs = layerinfo$pr
 
 wk_peek(geom[32:35], border = c("hotpink", "green", "firebrick", "white"), lwd = 3)
 ```
+
+
+Originally scoped out here as a way to toy with magick as a way to view image tiles: https://gist.github.com/mdsumner/cf11ec316f61046c363fd2a314c6ee26
+
+
+## Code of Conduct
+  
+Please note that the wkpeek project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
